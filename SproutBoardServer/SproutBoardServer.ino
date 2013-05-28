@@ -18,7 +18,7 @@
 #endif
 
 /*
-Sproutboard Garden Room Monitor
+Sproutboard Room Monitor
 Sproutboard.com
 
 Analog I/O:
@@ -27,7 +27,10 @@ Analog 1 - Accessory Terminal Block 1 (TA1) unused
 Analog 2 - Accessory Terminal Block 2 (TA2) unused
 Analog 3 - Onboard Accessories Socket 1 (Temperature sensor on external board J9)
 Analog 4 - Onboard Accessories Socket 1 (Humidity sensor on external board J9)
+//on SproutBoard Basic
 Analog 5 - Onboard Accessories Socket 2 (Sound J10)
+//on SproutBoard Pro
+Analog 5 - Accessory Terminal Block 3 (TA2) unused
 
 Digital I/O:
 Digital 0 - Not used
@@ -218,7 +221,7 @@ void statusCmd( WebServer &server, WebServer::ConnectionType type, char *tail, b
 
 void setup() 
 {
-     mac[ 5 ] = ip[ 3 ]; // hack ensures each Grow unit has its own IP address.
+     mac[ 5 ] = ip[ 3 ]; // hack ensures each unit has its own IP address.
      
      reedSwitches.AddPin( 6 );
      // set digital pin I/O modes
